@@ -11,6 +11,7 @@ import java.util.Date;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button btnHora;
+    private int contador;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         btnHora = this.findViewById(R.id.btnHora);
         btnHora.setOnClickListener(this);
+        contador = 0;
         updateTime();
     }
 
@@ -27,7 +29,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void updateTime() {
-        String fecha = (new Date()).toString();
+        contador++;
+        String fecha = contador + " "+(new Date()).toString();
         btnHora.setText(fecha);
     }
 }
